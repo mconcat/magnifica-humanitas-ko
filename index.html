@@ -31,8 +31,14 @@ body {
     font-family: 'Pretendard Variable', Pretendard, -apple-system, 'Noto Sans KR', sans-serif;
     background: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.85;
-    font-size: 17px;
+    line-height: 1.75;
+    font-size: 16.5px;
+    letter-spacing: -0.01em;
+    word-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'kern' 1;
 }
 .layout {
     display: flex;
@@ -84,9 +90,9 @@ nav.toc a:hover {
 }
 main.article {
     flex: 1;
-    max-width: 750px;
+    max-width: 680px;
     margin: 0 auto;
-    padding: 3rem 2rem 6rem;
+    padding: 3rem 2.5rem 6rem;
 }
 .doc-header {
     text-align: center;
@@ -131,9 +137,11 @@ main.article {
     font-style: italic;
 }
 .para {
-    margin: 1rem 0;
-    text-align: justify;
+    margin: 1.1rem 0;
+    text-align: left;
     word-break: keep-all;
+    overflow-wrap: break-word;
+    hanging-punctuation: allow-end;
 }
 .para-num {
     color: var(--accent-light);
