@@ -25,6 +25,9 @@
         --border: #4a4535;
         --sidebar-bg: #252520;
     }
+    a { color: #c9a96e; }
+    a:hover { color: #e0d5b5; }
+    nav.toc a { color: #c9a96e; }
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
@@ -76,8 +79,15 @@ nav.toc li.chapter {
     margin-top: 1rem;
     font-weight: 600;
 }
+a {
+    color: #765e32;
+    text-decoration: none;
+}
+a:hover {
+    color: #5a4726;
+}
 nav.toc a {
-    color: var(--text-color);
+    color: #765e32;
     text-decoration: none;
     display: block;
     padding: 0.2rem 0.5rem;
@@ -86,7 +96,7 @@ nav.toc a {
 }
 nav.toc a:hover {
     background: var(--accent);
-    color: white;
+    color: #fff;
 }
 main.article {
     flex: 1;
