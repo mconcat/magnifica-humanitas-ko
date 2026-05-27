@@ -7,196 +7,222 @@
     <meta name="description" content="교황 레오 14세의 회칙 Magnifica Humanitas (인공지능 시대의 인간 보호에 관하여) 한국어 번역">
     <meta property="og:title" content="회칙 Magnifica Humanitas — 한국어 번역">
     <meta property="og:description" content="교황 레오 14세의 회칙 — 인공지능 시대의 인간 보호에 관하여 (2026.5.15)">
-    <style>
-:root {
-    --text-color: #333;
-    --bg-color: #fafaf7;
-    --accent: #8B1A1A;
-    --accent-light: #c9a96e;
+    <style>:root {
+    --text-color: #000;
+    --bg-color: #fff;
+    --link-color: #765e32;
+    --link-hover: #5a4726;
+    --accent: #765e32;
     --border: #d4c5a0;
-    --sidebar-bg: #f0ede4;
+    --grey: #666;
+    --light-bg: #f8f7f4;
 }
 @media (prefers-color-scheme: dark) {
     :root {
         --text-color: #d4d0c8;
-        --bg-color: #1a1a1a;
+        --bg-color: #1a1a17;
+        --link-color: #c9a96e;
+        --link-hover: #e0d5b5;
         --accent: #c9a96e;
-        --accent-light: #e0d5b5;
         --border: #4a4535;
-        --sidebar-bg: #252520;
+        --grey: #999;
+        --light-bg: #222220;
     }
-    a { color: #c9a96e; }
-    a:hover { color: #e0d5b5; }
-    nav.toc a { color: #c9a96e; }
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-    font-family: 'Pretendard Variable', Pretendard, -apple-system, 'Noto Sans KR', sans-serif;
+    font-family: 'Pretendard Variable', Pretendard, Inter, -apple-system, 'Noto Sans KR', sans-serif;
     background: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.75;
-    font-size: 16.5px;
+    line-height: 1.625;
+    font-size: 16px;
     letter-spacing: -0.01em;
-    word-spacing: 0.02em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     font-feature-settings: 'kern' 1;
 }
-.layout {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-nav.toc {
-    width: 280px;
-    min-width: 280px;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto;
-    padding: 2rem 1rem;
-    background: var(--sidebar-bg);
-    border-right: 1px solid var(--border);
-    font-size: 14px;
-}
-nav.toc h2 {
-    font-size: 15px;
-    color: var(--accent);
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--accent-light);
-    letter-spacing: 0.05em;
-}
-nav.toc ul {
-    list-style: none;
-    padding-left: 0;
-}
-nav.toc li {
-    margin: 0.4rem 0;
-}
-nav.toc li.chapter {
-    margin-top: 1rem;
-    font-weight: 600;
-}
 a {
-    color: #765e32;
+    color: var(--link-color);
     text-decoration: none;
 }
 a:hover {
-    color: #5a4726;
+    color: var(--link-hover);
 }
-nav.toc a {
-    color: #765e32;
-    text-decoration: none;
-    display: block;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    transition: background 0.2s;
-}
-nav.toc a:hover {
-    background: var(--accent);
-    color: #fff;
-}
-main.article {
-    flex: 1;
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 3rem 2.5rem 6rem;
-}
-.doc-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 2px solid var(--accent-light);
-}
-.doc-header .emblem {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-.doc-header h1 {
-    font-size: 1.8rem;
-    color: var(--accent);
-    line-height: 1.4;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.05em;
-}
-.doc-header .subtitle {
-    font-size: 1.1rem;
-    color: var(--accent-light);
-    margin-bottom: 1rem;
-}
-.doc-header .meta {
-    font-size: 0.9rem;
-    opacity: 0.7;
-}
-.chapter-heading {
-    font-size: 1.3rem;
-    color: var(--accent);
-    margin: 3rem 0 1rem;
-    padding: 0.8rem 0;
+
+/* ── Header ── */
+.site-header {
     border-bottom: 1px solid var(--border);
-    letter-spacing: 0.05em;
+    background: var(--bg-color);
+}
+.header-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-color);
+}
+.header-title a {
+    color: var(--text-color);
+}
+.header-lang {
+    font-size: 0.85rem;
+    color: var(--grey);
+}
+.header-lang a {
+    color: var(--grey);
+    margin: 0 0.3rem;
+}
+.header-lang a:hover {
+    color: var(--link-color);
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0.6rem 2rem;
+    font-size: 0.85rem;
+    color: var(--grey);
+    border-bottom: 1px solid var(--border);
+}
+.breadcrumb a {
+    color: var(--link-color);
+    font-weight: 500;
+}
+.breadcrumb .sep {
+    margin: 0 0.4rem;
+    color: var(--grey);
+}
+
+/* ── Main content ── */
+.documento {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 2rem 6rem 4rem;
+}
+@media (max-width: 900px) {
+    .documento { padding: 1.5rem 1.2rem 3rem; }
+    .header-inner { padding: 1rem 1.2rem; }
+    .breadcrumb { padding: 0.5rem 1.2rem; }
+}
+
+/* ── Document title ── */
+.doc-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    font-size: 18px;
+    line-height: 1.6;
+}
+.doc-title b {
     font-weight: 700;
 }
-.section-heading {
-    font-size: 1.1rem;
-    color: var(--accent);
-    margin: 2rem 0 0.8rem;
-    font-weight: 600;
-    font-style: italic;
+
+/* ── Inline TOC ── */
+.toc-divider {
+    text-align: center;
+    color: var(--grey);
+    margin: 1rem 0;
+    font-size: 14px;
 }
+.toc-block {
+    margin-bottom: 0.5rem;
+}
+.toc-block.toc-chapter {
+    margin-top: 1rem;
+}
+.toc-block.toc-chapter a {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.toc-block.toc-section a {
+    font-weight: 400;
+    padding-left: 1.5rem;
+    font-size: 14px;
+}
+.toc-block.toc-section-intro a {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* ── Headings ── */
+.chapter-heading {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 3rem 0 1.2rem;
+    padding-top: 1.5rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+    letter-spacing: 0.03em;
+}
+.section-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 2.5rem 0 0.8rem;
+    font-style: italic;
+    color: var(--text-color);
+}
+
+/* ── Paragraphs ── */
 .para {
-    margin: 1.1rem 0;
+    margin: 0.8rem 0;
     text-align: left;
     word-break: keep-all;
     overflow-wrap: break-word;
-    hanging-punctuation: allow-end;
+    line-height: 1.625;
 }
 .para-num {
-    color: var(--accent-light);
+    color: var(--accent);
     font-weight: 600;
-    font-size: 0.9rem;
-    margin-right: 0.3rem;
+    font-size: 0.9em;
+    margin-right: 0.2rem;
 }
+
+/* ── Blockquote ── */
 blockquote, .quote {
     margin: 1.5rem 0;
     padding: 1rem 1.5rem;
-    border-left: 3px solid var(--accent-light);
-    background: var(--sidebar-bg);
+    border-left: 3px solid var(--border);
+    background: var(--light-bg);
     font-style: italic;
 }
+
+/* ── Footer ── */
 .source-link {
     text-align: center;
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid var(--border);
     font-size: 0.9rem;
-    opacity: 0.7;
-}
-.source-link a {
-    color: var(--accent);
+    color: var(--grey);
 }
 footer {
     text-align: center;
     padding: 2rem;
     font-size: 0.8rem;
-    opacity: 0.5;
+    color: var(--grey);
     border-top: 1px solid var(--border);
+    max-width: 1140px;
+    margin: 0 auto;
 }
-@media (max-width: 900px) {
-    .layout { flex-direction: column; }
-    nav.toc {
-        width: 100%;
-        min-width: 100%;
-        height: auto;
-        position: relative;
-        max-height: 40vh;
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-    }
-    main.article { padding: 2rem 1.2rem 4rem; }
+
+/* ── Footnotes ── */
+.footnote-ref {
+    font-size: 0.85em;
+    vertical-align: super;
+    line-height: 0;
 }
+
 @font-face {
     font-family: 'Pretendard Variable';
     font-weight: 45 920;
@@ -207,114 +233,131 @@ footer {
 </style>
 </head>
 <body>
-<div class="layout">
-    <nav class="toc">
-        <h2>목차</h2>
-        <ul>
-            <li><a href="#회칙-마니피카-후마니타스-MAGNIFICA-HUMANITAS--교황-레오-14세-성하의-인">회칙 마니피카 후마니타스(MAGNIFICA HUMANITAS) 교황 레오 14세 성하의 인공지능 시대의 인간 보호에 관한 회칙</a></li>
-<li class="chapter"><a href="#제1장-복음에-충실한-역동적-접근">제1장 복음에 충실한 역동적 접근</a></li>
-<li class="chapter"><a href="#제2장-교회-사회-교리의-기초와-원칙">제2장 교회 사회 교리의 기초와 원칙</a></li>
-<li class="chapter"><a href="#제3장">제3장</a></li>
-<li><a href="#기술과-지배--AI의-약속에-비추어-본-인간성의-위대함">기술과 지배. AI의 약속에 비추어 본 인간성의 위대함</a></li>
-<li class="chapter"><a href="#제4장-변혁의-시대--인류의-보호---진리--노동--자유">제4장 변혁의 시대, 인류의 보호.  진리, 노동, 자유</a></li>
-<li class="chapter"><a href="#제5장">제5장</a></li>
-<li><a href="#권력의-문화와-사랑의-문명">권력의 문화와 사랑의 문명</a></li>
-<li><a href="#결론---말씀이-사람이-되시어-그리스도-안에서-한-몸-우리-시대의-건설-현장-희망의-노래">결론   말씀이 사람이 되시어 그리스도 안에서 한 몸 우리 시대의 건설 현장 희망의 노래: &nbsp;마니피캇(Magnificat)</a></li>
-<li><a href="#nbsp">&nbsp;</a></li>
-<li><a href="#nbsp">&nbsp;</a></li>
-<li><a href="#우리-시대의-res-novae-새로운-사태">우리 시대의 res novae(새로운 사태)</a></li>
-<li><a href="#두-가지-성경적-이미지">두 가지 성경적 이미지</a></li>
-<li><a href="#공동선을-위한-구축">공동선을 위한 구축</a></li>
-<li><a href="#인간으로-남기">인간으로 남기</a></li>
-<li class="chapter"><a href="#제1장">제1장</a></li>
-<li><a href="#복음에-충실한-역동적-접근">복음에 충실한 역동적 접근</a></li>
-<li><a href="#인류-역사를-통해-여정을-이어가는-교회">인류 역사를 통해 여정을 이어가는 교회</a></li>
-<li><a href="#인간-과학과의-대화-속에-있는-하느님-말씀의-지혜">인간 과학과의 대화 속에 있는 하느님 말씀의 지혜</a></li>
-<li><a href="#공동의-식별로서의-사회-교리">공동의 식별로서의 사회 교리</a></li>
-<li><a href="#레오-13세부터-현재까지의-사회-교리-발전">레오 13세부터 현재까지의 사회 교리 발전</a></li>
-<li><a href="#교회-사회-교리의-초기-단계들">교회 사회 교리의 초기 단계들</a></li>
-<li><a href="#제2차-바티칸-공의회-의-시기">제2차 바티칸 공의회 의 시기</a></li>
-<li><a href="#최근의-교도권">최근의 교도권</a></li>
-<li><a href="#신앙의-빛-안에서-역사를-해석함">신앙의 빛 안에서 역사를 해석함</a></li>
-<li class="chapter"><a href="#제2장">제2장</a></li>
-<li><a href="#교회-사회-교리의-기초와-원칙">교회 사회 교리의 기초와 원칙</a></li>
-<li><a href="#사회-교리의-기초">사회 교리의 기초</a></li>
-<li><a href="#인간--삼위일체-하느님의-모상">인간: 삼위일체 하느님의 모상</a></li>
-<li><a href="#모든-인간의-평등한-존엄성">모든 인간의 평등한 존엄성</a></li>
-<li><a href="#인권의-지고한-가치">인권의 지고한 가치</a></li>
-<li><a href="#사회-교리의-원칙들">사회 교리의 원칙들</a></li>
-<li><a href="#공동선의-원리">공동선의 원리</a></li>
-<li><a href="#재화의-보편적-목적--universal-destination-of-goods--원칙">재화의 보편적 목적( universal destination of goods) 원칙</a></li>
-<li><a href="#보조성의-원리">보조성의 원리</a></li>
-<li><a href="#연대성의-원리">연대성의 원리</a></li>
-<li><a href="#사회-정의의-원칙">사회 정의의 원칙</a></li>
-<li><a href="#통전적-인간-발전">통전적 인간 발전</a></li>
-<li><a href="#교회를-위한-성찰">교회를 위한 성찰</a></li>
-<li class="chapter"><a href="#제3장">제3장</a></li>
-<li><a href="#기술과-지배">기술과 지배.</a></li>
-<li><a href="#AI의-약속에-비추어-본인간성의-위대함">AI의 약속에 비추어 본인간성의 위대함</a></li>
-<li><a href="#기술관료적-패러다임과-디지털-권력">기술관료적 패러다임과 디지털 권력</a></li>
-<li><a href="#인공지능">인공지능</a></li>
-<li><a href="#경각심을-요하는-가치-있는-도구">경각심을 요하는 가치 있는 도구</a></li>
-<li><a href="#책임--투명성-및-AI의-거버넌스">책임, 투명성 및 AI의 거버넌스</a></li>
-<li><a href="#잃어버려서는-안-될-것들">잃어버려서는 안 될 것들</a></li>
-<li><a href="#기저의-서사--트랜스휴머니즘과-포스트휴머니즘">기저의 서사: 트랜스휴머니즘과 포스트휴머니즘</a></li>
-<li><a href="#인간-존엄성의-한계--중심-그리고-위대함">인간 존엄성의 한계, 중심 그리고 위대함</a></li>
-<li><a href="#진정한--인간-이상의-존재---은총과-그리스도교-휴머니즘">진정한 “인간 이상의 존재”: 은총과 그리스도교 휴머니즘</a></li>
-<li><a href="#두-도시와-두-가지-사랑">두 도시와 두 가지 사랑</a></li>
-<li class="chapter"><a href="#제4장">제4장</a></li>
-<li><a href="#변혁의-시대--인류의-존엄성-수호">변혁의 시대, 인류의 존엄성 수호.</a></li>
-<li><a href="#진리--노동--자유">진리, 노동, 자유</a></li>
-<li><a href="#공동선으로서의-진리">공동선으로서의 진리</a></li>
-<li><a href="#진리와-민주주의">진리와 민주주의</a></li>
-<li><a href="#소통과-집단적-상상력">소통과 집단적 상상력</a></li>
-<li><a href="#소통의-생태학을-향하여">소통의 생태학을 향하여</a></li>
-<li><a href="#디지털-시대를-위한-교육적-동맹">디지털 시대를 위한 교육적 동맹</a></li>
-<li><a href="#학교의-중심적-역할">학교의 중심적 역할</a></li>
-<li><a href="#디지털-전환-시대의-노동의-존엄성">디지털 전환 시대의 노동의 존엄성</a></li>
-<li><a href="#노동의-가치">노동의 가치</a></li>
-<li><a href="#실업-문제">실업 문제</a></li>
-<li><a href="#존엄성을-가치-있게-여기는-경제">존엄성을 가치 있게 여기는 경제</a></li>
-<li><a href="#가족과-청년들--희망을-위한-사회적-조건들">가족과 청년들: 희망을 위한 사회적 조건들</a></li>
-<li><a href="#의존성과-상업화에-맞서-자유를-수호함">의존성과 상업화에 맞서 자유를 수호함</a></li>
-<li><a href="#의존성과-사회적-통제">의존성과 사회적 통제</a></li>
-<li><a href="#새로운-형태의-노예제의-사슬을-끊어내며">새로운 형태의 노예제의 사슬을 끊어내며</a></li>
-<li><a href="#공동의-책임">공동의 책임</a></li>
-<li class="chapter"><a href="#제5장">제5장</a></li>
-<li><a href="#권력의-문화와-사랑의-문명">권력의 문화와 사랑의 문명</a></li>
-<li><a href="#디지털-시대의-사랑의-문명">디지털 시대의 사랑의 문명</a></li>
-<li><a href="#권력의-문화">권력의 문화</a></li>
-<li><a href="#전쟁의-정상화">전쟁의 정상화</a></li>
-<li><a href="#한계-없는-힘">한계 없는 힘</a></li>
-<li><a href="#무기와-인공지능">무기와 인공지능</a></li>
-<li><a href="#다자주의의-위기">다자주의의 위기</a></li>
-<li><a href="#소위-정치적-리얼리즘">소위 정치적 리얼리즘</a></li>
-<li><a href="#사랑의-문명-건설하기">사랑의 문명 건설하기</a></li>
-<li><a href="#우리-모두는-각자의-역할을-다할-수-있습니다">우리 모두는 각자의 역할을 다할 수 있습니다</a></li>
-<li><a href="#언어의-무장-해제-필요성">언어의 무장 해제 필요성</a></li>
-<li><a href="#정의를-통한-평화-구축">정의를 통한 평화 구축</a></li>
-<li><a href="#피해자들의-관점을-수용함">피해자들의 관점을 수용함</a></li>
-<li><a href="#건강한-현실주의의-함양">건강한 현실주의의 함양</a></li>
-<li><a href="#대화의-회복">대화의 회복</a></li>
-<li><a href="#외교와-다자주의의-필요성">외교와 다자주의의 필요성</a></li>
-<li><a href="#기도와-희망">기도와 희망</a></li>
-<li><a href="#말씀이-사람이-되시어">말씀이 사람이 되시어</a></li>
-<li><a href="#그리스도-안에서-한-몸">그리스도 안에서 한 몸</a></li>
-<li><a href="#우리-시대의-건설-현장">우리 시대의 건설 현장</a></li>
-<li><a href="#희망의-노래--nbsp-마니피캇">희망의 노래:&nbsp;마니피캇</a></li>
-<li><a href="#nbsp">&nbsp;</a></li>
-<li><a href="#레오-14세-교황">레오 14세 교황</a></li>
-        </ul>
-    </nav>
-    <main class="article">
-        <div class="doc-header">
-            <div class="emblem">✠</div>
-            <h1>MAGNIFICA HUMANITAS</h1>
-            <div class="subtitle">인공지능 시대의 인간 보호에 관하여</div>
-            <div class="meta">교황 레오 14세 성하의 회칙 · 2026년 5월 15일</div>
+<header class="site-header">
+    <div class="header-inner">
+        <div class="header-title"><a href="https://www.vatican.va" target="_blank">교황청</a></div>
+        <div class="header-lang">
+            <a href="https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html" target="_blank">EN</a> ·
+            <span style="font-weight:600; color: var(--text-color);">한국어 번역</span>
         </div>
-        
-        <h3 class="section-heading" id="서론"><b><a href="#INTRODUCTION_">서론</a></b></h3>
+    </div>
+</header>
+<div class="breadcrumb">
+    <a href="https://www.vatican.va/content/leo-xiv/en.html" target="_blank">레오 14세</a>
+    <span class="sep">›</span>
+    <a href="https://www.vatican.va/content/leo-xiv/en/encyclicals.index.html" target="_blank">회칙</a>
+    <span class="sep">›</span>
+    <span>Magnifica Humanitas</span>
+</div>
+
+<div class="documento">
+    <div class="doc-title">
+        <p>회칙<br>
+        <b>MAGNIFICA HUMANITAS</b><br>
+        교황 레오 14세 성하의<br>
+        인공지능 시대의<br>
+        인간 보호에 관한 회칙</p>
+    </div>
+
+    <div class="toc-divider">___________________________</div>
+
+    <div class="toc-block toc-section"><a href="#회칙-마니피카-후마니타스-MAGNIFICA-HUMANITAS--교황-레오-14세-성하의-인">회칙 마니피카 후마니타스(MAGNIFICA HUMANITAS) 교황 레오 14세 성하의 인공지능 시대의 인간 보호에 관한 회칙</a></div>
+<div class="toc-block toc-chapter"><a href="#제1장-복음에-충실한-역동적-접근">제1장 복음에 충실한 역동적 접근</a></div>
+<div class="toc-block toc-chapter"><a href="#제2장-교회-사회-교리의-기초와-원칙">제2장 교회 사회 교리의 기초와 원칙</a></div>
+<div class="toc-block toc-chapter"><a href="#제3장">제3장</a></div>
+<div class="toc-block toc-section"><a href="#기술과-지배--AI의-약속에-비추어-본-인간성의-위대함">기술과 지배. AI의 약속에 비추어 본 인간성의 위대함</a></div>
+<div class="toc-block toc-chapter"><a href="#제4장-변혁의-시대--인류의-보호---진리--노동--자유">제4장 변혁의 시대, 인류의 보호.  진리, 노동, 자유</a></div>
+<div class="toc-block toc-chapter"><a href="#제5장">제5장</a></div>
+<div class="toc-block toc-section"><a href="#권력의-문화와-사랑의-문명">권력의 문화와 사랑의 문명</a></div>
+<div class="toc-block toc-chapter"><a href="#결론---말씀이-사람이-되시어-그리스도-안에서-한-몸-우리-시대의-건설-현장-희망의-노래">결론   말씀이 사람이 되시어 그리스도 안에서 한 몸 우리 시대의 건설 현장 희망의 노래: &nbsp;마니피캇(Magnificat)</a></div>
+<div class="toc-block toc-section"><a href="#nbsp">&nbsp;</a></div>
+<div class="toc-block toc-section"><a href="#nbsp">&nbsp;</a></div>
+<div class="toc-block toc-section"><a href="#우리-시대의-res-novae-새로운-사태">우리 시대의 res novae(새로운 사태)</a></div>
+<div class="toc-block toc-section"><a href="#두-가지-성경적-이미지">두 가지 성경적 이미지</a></div>
+<div class="toc-block toc-section"><a href="#공동선을-위한-구축">공동선을 위한 구축</a></div>
+<div class="toc-block toc-section"><a href="#인간으로-남기">인간으로 남기</a></div>
+<div class="toc-block toc-chapter"><a href="#제1장">제1장</a></div>
+<div class="toc-block toc-section"><a href="#복음에-충실한-역동적-접근">복음에 충실한 역동적 접근</a></div>
+<div class="toc-block toc-section"><a href="#인류-역사를-통해-여정을-이어가는-교회">인류 역사를 통해 여정을 이어가는 교회</a></div>
+<div class="toc-block toc-section"><a href="#인간-과학과의-대화-속에-있는-하느님-말씀의-지혜">인간 과학과의 대화 속에 있는 하느님 말씀의 지혜</a></div>
+<div class="toc-block toc-section"><a href="#공동의-식별로서의-사회-교리">공동의 식별로서의 사회 교리</a></div>
+<div class="toc-block toc-section"><a href="#레오-13세부터-현재까지의-사회-교리-발전">레오 13세부터 현재까지의 사회 교리 발전</a></div>
+<div class="toc-block toc-section"><a href="#교회-사회-교리의-초기-단계들">교회 사회 교리의 초기 단계들</a></div>
+<div class="toc-block toc-section"><a href="#제2차-바티칸-공의회-의-시기">제2차 바티칸 공의회 의 시기</a></div>
+<div class="toc-block toc-section"><a href="#최근의-교도권">최근의 교도권</a></div>
+<div class="toc-block toc-section"><a href="#신앙의-빛-안에서-역사를-해석함">신앙의 빛 안에서 역사를 해석함</a></div>
+<div class="toc-block toc-chapter"><a href="#제2장">제2장</a></div>
+<div class="toc-block toc-section"><a href="#교회-사회-교리의-기초와-원칙">교회 사회 교리의 기초와 원칙</a></div>
+<div class="toc-block toc-section"><a href="#사회-교리의-기초">사회 교리의 기초</a></div>
+<div class="toc-block toc-section"><a href="#인간--삼위일체-하느님의-모상">인간: 삼위일체 하느님의 모상</a></div>
+<div class="toc-block toc-section"><a href="#모든-인간의-평등한-존엄성">모든 인간의 평등한 존엄성</a></div>
+<div class="toc-block toc-section"><a href="#인권의-지고한-가치">인권의 지고한 가치</a></div>
+<div class="toc-block toc-section"><a href="#사회-교리의-원칙들">사회 교리의 원칙들</a></div>
+<div class="toc-block toc-section"><a href="#공동선의-원리">공동선의 원리</a></div>
+<div class="toc-block toc-section"><a href="#재화의-보편적-목적--universal-destination-of-goods--원칙">재화의 보편적 목적( universal destination of goods) 원칙</a></div>
+<div class="toc-block toc-section"><a href="#보조성의-원리">보조성의 원리</a></div>
+<div class="toc-block toc-section"><a href="#연대성의-원리">연대성의 원리</a></div>
+<div class="toc-block toc-section"><a href="#사회-정의의-원칙">사회 정의의 원칙</a></div>
+<div class="toc-block toc-section"><a href="#통전적-인간-발전">통전적 인간 발전</a></div>
+<div class="toc-block toc-section"><a href="#교회를-위한-성찰">교회를 위한 성찰</a></div>
+<div class="toc-block toc-chapter"><a href="#제3장">제3장</a></div>
+<div class="toc-block toc-section"><a href="#기술과-지배">기술과 지배.</a></div>
+<div class="toc-block toc-section"><a href="#AI의-약속에-비추어-본인간성의-위대함">AI의 약속에 비추어 본인간성의 위대함</a></div>
+<div class="toc-block toc-section"><a href="#기술관료적-패러다임과-디지털-권력">기술관료적 패러다임과 디지털 권력</a></div>
+<div class="toc-block toc-section"><a href="#인공지능">인공지능</a></div>
+<div class="toc-block toc-section"><a href="#경각심을-요하는-가치-있는-도구">경각심을 요하는 가치 있는 도구</a></div>
+<div class="toc-block toc-section"><a href="#책임--투명성-및-AI의-거버넌스">책임, 투명성 및 AI의 거버넌스</a></div>
+<div class="toc-block toc-section"><a href="#잃어버려서는-안-될-것들">잃어버려서는 안 될 것들</a></div>
+<div class="toc-block toc-section"><a href="#기저의-서사--트랜스휴머니즘과-포스트휴머니즘">기저의 서사: 트랜스휴머니즘과 포스트휴머니즘</a></div>
+<div class="toc-block toc-section"><a href="#인간-존엄성의-한계--중심-그리고-위대함">인간 존엄성의 한계, 중심 그리고 위대함</a></div>
+<div class="toc-block toc-section"><a href="#진정한--인간-이상의-존재---은총과-그리스도교-휴머니즘">진정한 “인간 이상의 존재”: 은총과 그리스도교 휴머니즘</a></div>
+<div class="toc-block toc-section"><a href="#두-도시와-두-가지-사랑">두 도시와 두 가지 사랑</a></div>
+<div class="toc-block toc-chapter"><a href="#제4장">제4장</a></div>
+<div class="toc-block toc-section"><a href="#변혁의-시대--인류의-존엄성-수호">변혁의 시대, 인류의 존엄성 수호.</a></div>
+<div class="toc-block toc-section"><a href="#진리--노동--자유">진리, 노동, 자유</a></div>
+<div class="toc-block toc-section"><a href="#공동선으로서의-진리">공동선으로서의 진리</a></div>
+<div class="toc-block toc-section"><a href="#진리와-민주주의">진리와 민주주의</a></div>
+<div class="toc-block toc-section"><a href="#소통과-집단적-상상력">소통과 집단적 상상력</a></div>
+<div class="toc-block toc-section"><a href="#소통의-생태학을-향하여">소통의 생태학을 향하여</a></div>
+<div class="toc-block toc-section"><a href="#디지털-시대를-위한-교육적-동맹">디지털 시대를 위한 교육적 동맹</a></div>
+<div class="toc-block toc-section"><a href="#학교의-중심적-역할">학교의 중심적 역할</a></div>
+<div class="toc-block toc-section"><a href="#디지털-전환-시대의-노동의-존엄성">디지털 전환 시대의 노동의 존엄성</a></div>
+<div class="toc-block toc-section"><a href="#노동의-가치">노동의 가치</a></div>
+<div class="toc-block toc-section"><a href="#실업-문제">실업 문제</a></div>
+<div class="toc-block toc-section"><a href="#존엄성을-가치-있게-여기는-경제">존엄성을 가치 있게 여기는 경제</a></div>
+<div class="toc-block toc-section"><a href="#가족과-청년들--희망을-위한-사회적-조건들">가족과 청년들: 희망을 위한 사회적 조건들</a></div>
+<div class="toc-block toc-section"><a href="#의존성과-상업화에-맞서-자유를-수호함">의존성과 상업화에 맞서 자유를 수호함</a></div>
+<div class="toc-block toc-section"><a href="#의존성과-사회적-통제">의존성과 사회적 통제</a></div>
+<div class="toc-block toc-section"><a href="#새로운-형태의-노예제의-사슬을-끊어내며">새로운 형태의 노예제의 사슬을 끊어내며</a></div>
+<div class="toc-block toc-section"><a href="#공동의-책임">공동의 책임</a></div>
+<div class="toc-block toc-chapter"><a href="#제5장">제5장</a></div>
+<div class="toc-block toc-section"><a href="#권력의-문화와-사랑의-문명">권력의 문화와 사랑의 문명</a></div>
+<div class="toc-block toc-section"><a href="#디지털-시대의-사랑의-문명">디지털 시대의 사랑의 문명</a></div>
+<div class="toc-block toc-section"><a href="#권력의-문화">권력의 문화</a></div>
+<div class="toc-block toc-section"><a href="#전쟁의-정상화">전쟁의 정상화</a></div>
+<div class="toc-block toc-section"><a href="#한계-없는-힘">한계 없는 힘</a></div>
+<div class="toc-block toc-section"><a href="#무기와-인공지능">무기와 인공지능</a></div>
+<div class="toc-block toc-section"><a href="#다자주의의-위기">다자주의의 위기</a></div>
+<div class="toc-block toc-section"><a href="#소위-정치적-리얼리즘">소위 정치적 리얼리즘</a></div>
+<div class="toc-block toc-section"><a href="#사랑의-문명-건설하기">사랑의 문명 건설하기</a></div>
+<div class="toc-block toc-section"><a href="#우리-모두는-각자의-역할을-다할-수-있습니다">우리 모두는 각자의 역할을 다할 수 있습니다</a></div>
+<div class="toc-block toc-section"><a href="#언어의-무장-해제-필요성">언어의 무장 해제 필요성</a></div>
+<div class="toc-block toc-section"><a href="#정의를-통한-평화-구축">정의를 통한 평화 구축</a></div>
+<div class="toc-block toc-section"><a href="#피해자들의-관점을-수용함">피해자들의 관점을 수용함</a></div>
+<div class="toc-block toc-section"><a href="#건강한-현실주의의-함양">건강한 현실주의의 함양</a></div>
+<div class="toc-block toc-section"><a href="#대화의-회복">대화의 회복</a></div>
+<div class="toc-block toc-section"><a href="#외교와-다자주의의-필요성">외교와 다자주의의 필요성</a></div>
+<div class="toc-block toc-section"><a href="#기도와-희망">기도와 희망</a></div>
+<div class="toc-block toc-section"><a href="#말씀이-사람이-되시어">말씀이 사람이 되시어</a></div>
+<div class="toc-block toc-section"><a href="#그리스도-안에서-한-몸">그리스도 안에서 한 몸</a></div>
+<div class="toc-block toc-section"><a href="#우리-시대의-건설-현장">우리 시대의 건설 현장</a></div>
+<div class="toc-block toc-section"><a href="#희망의-노래--nbsp-마니피캇">희망의 노래:&nbsp;마니피캇</a></div>
+<div class="toc-block toc-section"><a href="#nbsp">&nbsp;</a></div>
+<div class="toc-block toc-section"><a href="#레오-14세-교황">레오 14세 교황</a></div>
+
+    <div class="toc-divider" style="margin-top:2rem;">___________________________</div>
+
+    <h3 class="section-heading" id="서론"><b><a href="#INTRODUCTION_">서론</a></b></h3>
 <p class="para"><a href="#The_res_novae_of_our_time">우리 시대의 <i>res novae</i>(새로운 사태)</a><br /> <a href="#Two_biblical_images">두 가지 성경적 이미지</a><br /> <a href="#Building_">공동선을 위한 건설</a><br /> <a href="#Remaining_human">인간으로 남기</a></p>
 <h2 class="chapter-heading" id="제1장-복음에-충실한-역동적-접근"><b><a href="#CHAPTER_ONE">제1장</a><br /> <a href="#A_DYNAMIC">복음에 충실한 역동적 접근</a></b></h2>
 <p class="para"><a href="#A_Church_journeying">인류 역사를 통해 여정을 걷는 교회</a><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i><a href="#The_wisdom">인간 과학과 대화하는 하느님 말씀의 지혜</a><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Social_Doctrine">공동의 식별로서의 사회 교리</a><br /> </i><a href="#The_development">레오 13세부터 현재까지의 사회 교리 발전</a><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i><a href="#The_first_stages">교회 사회 교리의 초기 단계</a><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#The_years">제2차 바티칸 공의회 시기</a><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#The_recent_Magisterium">최근의 교도권</a> <br /> </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i><a href="#Interpreting_history">신앙의 빛 안에서 역사를 해석함</a></i></p>
@@ -885,13 +928,13 @@ footer {
 <p class="para"><a name="_ftn222" href="#_ftnref222" class=" cleaner">[222]</a>&nbsp;베네딕토 16세, <a href="https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060215.html"><i>일반 알현</i></a>&nbsp;(2006년 2월 15일): <i>로세르바토레 로마노(L’Osservatore Romano)</i>, 2006년 2월 16일, 4.</p>
 <p class="para"><a name="_ftn223" href="#_ftnref223" class=" cleaner">[223]</a> <i><a href="https://www.vatican.va/content/leo-xiv/en/speeches/2025/october/documents/20251011-veglia-di-preghiera.html">평화를 위한 기도 밤샘 기도와 묵주기도를 위한 묵상</a></i>&nbsp;(2025년 10월 11일): <i>로세르바토레 로마노(L’Osservatore Romano)</i>, 2025년 10월 13일, 2쪽.</p>
 <p class="para"><a name="_ftn224" href="#_ftnref224" class=" cleaner">[224]</a>&nbsp;성 바오로 6세, <i>보나리아의 성모 성지 강론(Homily at the Marian Shrine of Our Lady of Bonaria)</i>, (1970년 4월 24일): <i>AAS</i> 62 (1970), 301.</p>
-        
-        <div class="source-link">
-            <p>원문: <a href="https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html" target="_blank">Vatican.va — Encyclical Letter Magnifica Humanitas</a></p>
-            <p>번역: Gemma 4 31B-it · 검수 진행 중</p>
-        </div>
-    </main>
+
+    <div class="source-link">
+        <p>원문: <a href="https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html" target="_blank">Vatican.va — Encyclical Letter Magnifica Humanitas</a></p>
+        <p>번역: Gemma 4 31B-it · 비공식 번역</p>
+    </div>
 </div>
+
 <footer>
     <p>© Dicastery for Communication - Libreria Editrice Vaticana</p>
     <p>이 번역은 비공식 번역이며, 원문의 저작권은 바티칸에 있습니다.</p>
